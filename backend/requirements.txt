@@ -1,0 +1,11 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+requests>=2.31.0
+pydantic>=2.6.0
+python-dotenv>=1.0.0
+pytest>=8.0.0
+httpx>=0.27.0
+
+# Only needed if you set LLM_PROVIDER=anthropic (paid). Not required for the
+# default free Groq provider, which uses plain `requests` above.
+# anthropic>=0.40.0

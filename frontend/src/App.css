@@ -1,0 +1,66 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --border: #2a2f3a;
+  --text: #e6e8eb;
+  --muted: #9aa2af;
+  --accent: #5fb3ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app-shell { max-width: 800px; margin: 0 auto; padding: 32px 20px 80px; }
+.app-header h1 { margin-bottom: 4px; }
+.app-header p { color: var(--muted); margin-top: 0; }
+
+.task-input { display: flex; gap: 8px; margin: 24px 0; }
+.task-input input {
+  flex: 1; padding: 10px 12px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--panel); color: var(--text);
+}
+.task-input button {
+  padding: 10px 16px; border-radius: 8px; border: none;
+  background: var(--accent); color: #05203a; font-weight: 600; cursor: pointer;
+}
+.task-input button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.panel {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 20px; margin-bottom: 16px;
+}
+.panel h2 {
+  margin-top: 0; font-size: 14px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+.step-list { list-style: none; padding: 0; margin: 0; }
+.step { padding: 4px 0; }
+.step-done { color: #7fe0a0; }
+.step-active { color: var(--accent); font-weight: 600; }
+.step-pending { color: var(--muted); }
+
+.tool-log { font-family: ui-monospace, monospace; font-size: 13px; max-height: 260px; overflow-y: auto; }
+.tool-log-line { padding: 2px 0; color: var(--muted); }
+.tool-log-tool_call { color: var(--accent); }
+
+.error-panel {
+  border-color: #ff6b6b;
+  background: #241719;
+}
+.error-panel h2,
+.error-panel p {
+  color: #ffb3b3;
+}
+
+.report-content {
+  white-space: pre-wrap; font-family: inherit; line-height: 1.5;
+  background: #10131a; padding: 16px; border-radius: 8px;
+}
+.report-path { color: var(--muted); font-size: 13px; }
